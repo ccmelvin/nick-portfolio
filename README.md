@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Portfolio Website with Next.js, TypeScript, and Tailwind CSS
 
-## Getting Started
+A responsive and animated portfolio website built with Next.js 13+, TypeScript, and Tailwind CSS. Features smooth animations, dark mode support, and a modern design system for showcasing creative work and services.
 
-First, run the development server:
+This project combines modern web technologies to create a performant and visually appealing portfolio website. It features smooth scroll animations powered by Framer Motion, a responsive design system using Tailwind CSS, and type-safe development with TypeScript. The website includes sections for showcasing work, services, testimonials, and a contact form, all built with reusable components.
+
+## Repository Structure
+```
+.
+├── src/                          # Source code directory
+│   ├── app/                     # Next.js app directory containing routes and layouts
+│   │   ├── globals.css         # Global styles and theme configuration
+│   │   ├── layout.tsx         # Root layout component
+│   │   └── page.tsx          # Main page component with sections
+│   ├── components/            # Reusable React components
+│   │   ├── ui/              # Base UI components (buttons, inputs, etc.)
+│   │   └── [component].tsx  # Feature components (navbar, forms, cards)
+│   └── lib/                  # Utility functions and shared code
+├── public/                    # Static assets directory
+├── components.json           # UI components configuration
+├── tailwind.config.ts       # Tailwind CSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── package.json           # Project dependencies and scripts
+```
+
+## Usage Instructions
+### Prerequisites
+- Node.js 16.8.0 or later
+- npm or yarn package manager
+- Basic knowledge of React and TypeScript
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone <repository-url>
+cd <repository-name>
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Start development server
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Configure your portfolio content:
+```typescript
+// src/app/page.tsx
+export default function Home() {
+  return (
+    <main>
+      {/* Customize your sections here */}
+      <section id="hero">
+        <h1>Your Name</h1>
+        <p>Your tagline</p>
+      </section>
+    </main>
+  );
+}
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Add your own theme colors:
+```typescript
+// tailwind.config.ts
+export default {
+  theme: {
+    extend: {
+      colors: {
+        primary: "your-color",
+        // Add more custom colors
+      }
+    }
+  }
+}
+```
 
-## Learn More
+### More Detailed Examples
 
-To learn more about Next.js, take a look at the following resources:
+1. Creating a new portfolio item:
+```typescript
+// src/components/portfolio-item.tsx
+<PortfolioItem
+  title="Project Name"
+  category="Category"
+  imageSrc="/path/to/image.jpg"
+  delay={0.2}
+/>
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Adding a new service:
+```typescript
+// src/app/page.tsx
+<ServiceCard
+  title="Service Name"
+  description="Service description"
+  icon="IconName"
+  delay={0.2}
+/>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Troubleshooting
 
-## Deploy on Vercel
+Common issues and solutions:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Images not loading
+- Ensure images are placed in the `public` directory
+- Check image paths are relative to the public directory
+- Verify image formats are supported (jpg, png, webp)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Animations not working
+- Check if Framer Motion is properly installed
+- Verify motion components are properly configured
+- Enable JavaScript in the browser
+
+3. Styling issues
+- Run `npm run build` to verify Tailwind classes are generated
+- Check for conflicting CSS classes
+- Verify theme configuration in `tailwind.config.ts`
+
+## Data Flow
+
+The website follows a component-based architecture with data flowing from parent to child components through props.
+
+```ascii
+Layout (layout.tsx)
+    │
+    ├── Navbar
+    │
+    ├── Page Content (page.tsx)
+    │   ├── Hero Section
+    │   ├── About Section
+    │   ├── Services Section
+    │   ├── Portfolio Section
+    │   ├── Testimonials Section
+    │   └── Contact Section
+    │
+    └── Footer
+```
+
+Component interactions:
+- Layout component provides the base structure and theme context
+- Page components render section content and handle animations
+- UI components handle user interactions and form submissions
+- Theme provider manages light/dark mode transitions
+- Utility functions handle class name merging and animations
