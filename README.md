@@ -5,7 +5,8 @@ A responsive and animated portfolio website built with Next.js 13+, TypeScript, 
 This project combines modern web technologies to create a performant and visually appealing portfolio website. It features smooth scroll animations powered by Framer Motion, a responsive design system using Tailwind CSS, and type-safe development with TypeScript. The website includes sections for showcasing work, services, testimonials, and a contact form, all built with reusable components.
 
 ## Repository Structure
-```
+
+```bash
 .
 ├── src/                          # Source code directory
 │   ├── app/                     # Next.js app directory containing routes and layouts
@@ -24,7 +25,9 @@ This project combines modern web technologies to create a performant and visuall
 ```
 
 ## Usage Instructions
+
 ### Prerequisites
+
 - Node.js 16.8.0 or later
 - npm or yarn package manager
 - Basic knowledge of React and TypeScript
@@ -50,6 +53,7 @@ yarn dev
 ### Quick Start
 
 1. Configure your portfolio content:
+
 ```typescript
 // src/app/page.tsx
 export default function Home() {
@@ -65,7 +69,8 @@ export default function Home() {
 }
 ```
 
-2. Add your own theme colors:
+1. Add your own theme colors:
+
 ```typescript
 // tailwind.config.ts
 export default {
@@ -83,6 +88,7 @@ export default {
 ### More Detailed Examples
 
 1. Creating a new portfolio item:
+
 ```typescript
 // src/components/portfolio-item.tsx
 <PortfolioItem
@@ -93,7 +99,8 @@ export default {
 />
 ```
 
-2. Adding a new service:
+1. Adding a new service:
+
 ```typescript
 // src/app/page.tsx
 <ServiceCard
@@ -109,16 +116,19 @@ export default {
 Common issues and solutions:
 
 1. Images not loading
+
 - Ensure images are placed in the `public` directory
 - Check image paths are relative to the public directory
 - Verify image formats are supported (jpg, png, webp)
 
-2. Animations not working
+1. Animations not working
+
 - Check if Framer Motion is properly installed
 - Verify motion components are properly configured
 - Enable JavaScript in the browser
 
-3. Styling issues
+1. Styling issues
+
 - Run `npm run build` to verify Tailwind classes are generated
 - Check for conflicting CSS classes
 - Verify theme configuration in `tailwind.config.ts`
@@ -144,6 +154,7 @@ Layout (layout.tsx)
 ```
 
 Component interactions:
+
 - Layout component provides the base structure and theme context
 - Page components render section content and handle animations
 - UI components handle user interactions and form submissions
