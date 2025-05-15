@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-import SectionHeading from "@/components/section-heading"
-import ServiceCard from "@/components/service-card"
-import PortfolioItem from "@/components/portfolio-item"
-import TestimonialCard from "@/components/testimonial-card"
-import ContactForm from "@/components/contact-form"
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import SectionHeading from "@/components/section-heading";
+import ServiceCard from "@/components/service-card";
+import PortfolioItem from "@/components/portfolio-item";
+import TestimonialCard from "@/components/testimonial-card";
+import ContactForm from "@/components/contact-form";
 
 export default function Home() {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
-  })
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   useEffect(() => {
     // Smooth scrolling
-    document.documentElement.style.scrollBehavior = "smooth"
+    document.documentElement.style.scrollBehavior = "smooth";
     return () => {
-      document.documentElement.style.scrollBehavior = "auto"
-    }
-  }, [])
+      document.documentElement.style.scrollBehavior = "auto";
+    };
+  }, []);
 
   return (
     <main ref={ref} className="min-h-screen bg-[#f8f5f2]">
@@ -37,7 +37,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <motion.div className="absolute inset-0 z-0" style={{ y }}>
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src="/images/hero-background.jpg"
             alt="Background"
             fill
             priority
@@ -56,8 +56,8 @@ export default function Home() {
               Creating beautiful & functional designs
             </h1>
             <p className="font-sans text-lg md:text-xl text-[#555555] mb-10 max-w-xl mx-auto">
-              A creative studio specializing in branding, web design, and digital experiences that connect with your
-              audience.
+              A creative studio specializing in branding, web design, and
+              digital experiences that connect with your audience.
             </p>
             <Button className="bg-[#333333] hover:bg-[#555555] text-white rounded-none px-8 py-6 text-base">
               View My Work
@@ -66,8 +66,17 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M12 5V19M12 19L5 12M12 19L19 12"
                 stroke="#333333"
@@ -81,8 +90,18 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-white">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-24 bg-white relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 opacity-10">
+          <Image
+            src="/images/hero-background.jpg"
+            alt="Background texture"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -91,11 +110,11 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <Image
-                src="/placeholder.svg?height=800&width=600"
-                alt="About"
+                src="/images/professional-portrait.jpg"
+                alt="About Me"
                 width={600}
                 height={800}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover shadow-lg"
               />
             </motion.div>
 
@@ -106,18 +125,26 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-lg"
             >
-              <SectionHeading subtitle="About Me" title="The creative mind behind the designs" />
+              <SectionHeading
+                subtitle="About Me"
+                title="The creative mind behind the designs"
+              />
 
               <p className="font-sans text-[#555555] mb-6">
-                I'm a passionate designer with over 8 years of experience creating beautiful, functional designs that
-                help businesses connect with their audience. My approach combines aesthetic sensibility with strategic
-                thinking to deliver results that exceed expectations.
+                As a dedicated designer with 8+ years of expertise, I specialize
+                in crafting visually captivating and user-centric designs that
+                empower brands to forge meaningful connections with their
+                audiences. My work marries artistic vision with data-driven
+                strategy, ensuring every project not only resonates
+                aesthetically but also drives measurable outcomes that surpass
+                client objectives.
               </p>
 
               <p className="font-sans text-[#555555] mb-10">
-                Whether you're looking to establish a new brand, refresh your existing identity, or create a stunning
-                website, I bring creativity, attention to detail, and a deep understanding of design principles to every
-                project.
+                Whether you&apos;re launching a brand from scratch, revitalizing your
+                current identity, or building an eye-catching website, I combine
+                innovative creativity, meticulous precision, and a mastery of
+                design fundamentals to bring your vision to life.
               </p>
 
               <Button
@@ -141,9 +168,14 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <SectionHeading subtitle="Services" title="What I can do for you" centered />
+            <SectionHeading
+              subtitle="Services"
+              title="What I can do for you"
+              centered
+            />
             <p className="font-sans text-[#555555] mt-4">
-              I offer a range of creative services to help elevate your brand and digital presence.
+              I offer a range of creative services to help elevate your brand
+              and digital presence.
             </p>
           </motion.div>
 
@@ -180,83 +212,93 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
-            <SectionHeading subtitle="Portfolio" title="Selected works" centered />
-            <p className="font-sans text-[#555555] mt-4">A showcase of recent projects and collaborations.</p>
+            <SectionHeading
+              subtitle="Portfolio"
+              title="Selected works"
+              centered
+            />
+            <p className="font-sans text-[#555555] mt-4">
+              A showcase of recent projects and collaborations.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <PortfolioItem
               title="Botanical Branding"
               category="Brand Identity"
-              imageSrc="/placeholder.svg?height=600&width=800"
+              imageSrc="/images/botanical-branding.jpg"
               delay={0}
             />
             <PortfolioItem
               title="Minimalist E-commerce"
               category="Web Design"
-              imageSrc="/placeholder.svg?height=600&width=800"
+              imageSrc="/images/minimalist-eCommerce.jpg"
               delay={0.2}
             />
             <PortfolioItem
               title="Luxury Packaging"
               category="Print Design"
-              imageSrc="/placeholder.svg?height=600&width=800"
+              imageSrc="/images/luxury-packing.jpg"
               delay={0.4}
             />
             <PortfolioItem
               title="Wellness App"
               category="UI/UX Design"
-              imageSrc="/placeholder.svg?height=600&width=800"
+              imageSrc="/images/wellness-app.jpg"
               delay={0.6}
             />
           </div>
 
-          <div className="text-center mt-16">
+          {/* <div className="text-center mt-16">
             <Button className="bg-[#333333] hover:bg-[#555555] text-white rounded-none px-8 py-6 text-base">
               View All Projects
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-24 bg-[#f8f5f2]">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <SectionHeading subtitle="Testimonials" title="What clients say" centered />
-            <p className="font-sans text-[#555555] mt-4">
-              Don't just take my word for it - hear what my clients have to say.
-            </p>
-          </motion.div>
+<section id="testimonials" className="py-24 bg-[#f8f5f2]">
+  <div className="container mx-auto px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-center max-w-3xl mx-auto mb-16"
+    >
+      <SectionHeading
+        subtitle="Client Love"
+        title="Success Stories"
+        centered
+      />
+      <p className="font-sans text-[#555555] mt-4">
+        The proof is in the results - see how my work has made an impact.
+      </p>
+    </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TestimonialCard
-              quote="Working with this designer was an absolute pleasure. They took my vague ideas and transformed them into a stunning brand identity that perfectly captures our essence."
-              author="Sarah Johnson"
-              company="Bloom Botanicals"
-              delay={0}
-            />
-            <TestimonialCard
-              quote="Our website redesign exceeded all expectations. Not only is it beautiful, but it's also functional and has significantly improved our conversion rates."
-              author="Michael Chen"
-              company="Horizon Tech"
-              delay={0.2}
-            />
-            <TestimonialCard
-              quote="The attention to detail and creative vision brought to our project was exceptional. We couldn't be happier with the results and look forward to collaborating again."
-              author="Emma Rodriguez"
-              company="Lunar Studios"
-              delay={0.4}
-            />
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <TestimonialCard
+        quote="From initial concept to final execution, they demonstrated an incredible ability to translate our vision into a compelling brand identity that truly resonates with our audience."
+        author="Sarah Cole"
+        company="Bloom Botanicals"
+        delay={0}
+      />
+      <TestimonialCard
+        quote="Our new website achieved a 40% increase in engagement while maintaining our brand's premium aesthetic. The strategic approach to design made all the difference."
+        author="Andy Newton"
+        company="Horizonas Tech"
+        delay={0.2}
+      />
+      <TestimonialCard
+        quote="Exceptional craftsmanship and strategic thinking. Every detail was considered, resulting in a brand identity that has become our most valuable business asset."
+        author="Aline Santos"
+        company="Lunar Studios"
+        delay={0.4}
+      />
+    </div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-white">
@@ -269,16 +311,26 @@ export default function Home() {
               viewport={{ once: true }}
               className="max-w-lg"
             >
-              <SectionHeading subtitle="Get in Touch" title="Let's create something amazing together" />
+              <SectionHeading
+                subtitle="Get in Touch"
+                title="Let's create something amazing together"
+              />
 
               <p className="font-sans text-[#555555] mb-10">
-                I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+                I&apos;m always open to discussing new projects, creative ideas
+                or opportunities to be part of your vision.
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-center">
                   <div className="w-10 h-10 flex items-center justify-center bg-[#f8f5f2] rounded-full mr-4">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         d="M21 5L2 12.5L9 13.5M21 5L18.5 20L9 13.5M21 5L9 13.5"
                         stroke="#333333"
@@ -288,12 +340,20 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <span className="font-sans text-[#555555]">hello@example.com</span>
+                  <span className="font-sans text-[#555555]">
+                    hello@example.com
+                  </span>
                 </div>
 
                 <div className="flex items-center">
                   <div className="w-10 h-10 flex items-center justify-center bg-[#f8f5f2] rounded-full mr-4">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         d="M22 16.92V19.92C22 20.4704 21.7893 20.9996 21.4142 21.3747C21.0391 21.7498 20.5099 21.9605 19.96 21.96C18.2 22.09 16.48 21.89 14.87 21.37C13.38 20.89 12.01 20.14 10.8 19.15C9.63 18.1813 8.59 17.0732 7.72 15.85C6.73 14.63 5.98 13.26 5.5 11.77C4.98 10.16 4.78 8.43 4.91 6.67C4.91 6.12 5.12 5.59 5.49 5.21C5.86 4.84 6.39 4.62 6.94 4.62H9.94C10.95 4.62 11.83 5.37 11.98 6.37C12.08 7.01 12.25 7.63 12.49 8.23C12.79 9.01 12.61 9.88 12.05 10.44L11.09 11.4C11.9 12.57 12.88 13.55 14.05 14.36L15.01 13.4C15.57 12.84 16.44 12.66 17.22 12.96C17.82 13.2 18.44 13.37 19.08 13.47C20.09 13.62 20.85 14.51 20.85 15.53L22 16.92Z"
                         stroke="#333333"
@@ -303,12 +363,20 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <span className="font-sans text-[#555555]">+1 (555) 123-4567</span>
+                  <span className="font-sans text-[#555555]">
+                    +1 (555) 123-4567
+                  </span>
                 </div>
 
                 <div className="flex items-center">
                   <div className="w-10 h-10 flex items-center justify-center bg-[#f8f5f2] rounded-full mr-4">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
                         d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
                         stroke="#333333"
@@ -344,5 +412,5 @@ export default function Home() {
 
       <Footer />
     </main>
-  )
+  );
 }

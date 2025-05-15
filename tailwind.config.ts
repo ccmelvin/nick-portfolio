@@ -6,7 +6,8 @@ export default {
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "./lib/**/*.{ts,tsx}"
+    "./lib/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}"
   ],
   theme: {
     container: {
@@ -17,6 +18,10 @@ export default {
       },
     },
     extend: {
+      aspectRatio: {
+        'w-4': '4',
+        'h-3': '3',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -77,5 +82,5 @@ export default {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, require('@tailwindcss/aspect-ratio')],
 } satisfies Config;
