@@ -26,7 +26,9 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic would go here
+    // Here you would typically handle form submission, e.g., send data to an API
+    // For this demo, we'll just log the form state to the console
+    // and show an alert
     console.log(formState)
     alert("Form submitted! (This is just a demo)")
   }

@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main ref={ref} className="min-h-screen bg-[#f8f5f2]">
+    <main ref={ref} className="min-h-screen bg-[#f8f8f8]">
       <Navbar />
 
       {/* Hero Section */}
@@ -141,10 +141,10 @@ export default function Home() {
               </p>
 
               <p className="font-sans text-[#555555] mb-10">
-                Whether you&apos;re launching a brand from scratch, revitalizing your
-                current identity, or building an eye-catching website, I combine
-                innovative creativity, meticulous precision, and a mastery of
-                design fundamentals to bring your vision to life.
+                Whether you&apos;re launching a brand from scratch, revitalizing
+                your current identity, or building an eye-catching website, I
+                combine innovative creativity, meticulous precision, and a
+                mastery of design fundamentals to bring your vision to life.
               </p>
 
               <Button
@@ -159,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-[#f8f5f2]">
+      <section id="services" className="py-24 bg-[#f8f8f8]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -170,7 +170,7 @@ export default function Home() {
           >
             <SectionHeading
               subtitle="Services"
-              title="What I can do for you"
+              title="How I Can Elevate Your Brand"
               centered
             />
             <p className="font-sans text-[#555555] mt-4">
@@ -214,7 +214,7 @@ export default function Home() {
           >
             <SectionHeading
               subtitle="Portfolio"
-              title="Selected works"
+              title="Selected Works"
               centered
             />
             <p className="font-sans text-[#555555] mt-4">
@@ -248,57 +248,51 @@ export default function Home() {
               delay={0.6}
             />
           </div>
-
-          {/* <div className="text-center mt-16">
-            <Button className="bg-[#333333] hover:bg-[#555555] text-white rounded-none px-8 py-6 text-base">
-              View All Projects
-            </Button>
-          </div> */}
         </div>
       </section>
 
       {/* Testimonials Section */}
-<section id="testimonials" className="py-24 bg-[#f8f5f2]">
-  <div className="container mx-auto px-4">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="text-center max-w-3xl mx-auto mb-16"
-    >
-      <SectionHeading
-        subtitle="Client Love"
-        title="Success Stories"
-        centered
-      />
-      <p className="font-sans text-[#555555] mt-4">
-        The proof is in the results - see how my work has made an impact.
-      </p>
-    </motion.div>
+      <section id="testimonials" className="py-24 bg-[#f8f8f8]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <SectionHeading
+              subtitle="Client Love"
+              title="Success Stories"
+              centered
+            />
+            <p className="font-sans text-[#555555] mt-4">
+              The proof is in the results - see how my work has made an impact.
+            </p>
+          </motion.div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <TestimonialCard
-        quote="From initial concept to final execution, they demonstrated an incredible ability to translate our vision into a compelling brand identity that truly resonates with our audience."
-        author="Sarah Cole"
-        company="Bloom Botanicals"
-        delay={0}
-      />
-      <TestimonialCard
-        quote="Our new website achieved a 40% increase in engagement while maintaining our brand's premium aesthetic. The strategic approach to design made all the difference."
-        author="Andy Newton"
-        company="Horizonas Tech"
-        delay={0.2}
-      />
-      <TestimonialCard
-        quote="Exceptional craftsmanship and strategic thinking. Every detail was considered, resulting in a brand identity that has become our most valuable business asset."
-        author="Aline Santos"
-        company="Lunar Studios"
-        delay={0.4}
-      />
-    </div>
-  </div>
-</section>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <TestimonialCard
+              quote="From initial concept to final execution, they demonstrated an incredible ability to translate our vision into a compelling brand identity that truly resonates with our audience."
+              author="Sarah Cole"
+              company="Bloom Botanicals"
+              delay={0}
+            />
+            <TestimonialCard
+              quote="Our new website achieved a 40% increase in engagement while maintaining our brand's premium aesthetic. The strategic approach to design made all the difference."
+              author="Andy Newton"
+              company="Horizonas Tech"
+              delay={0.2}
+            />
+            <TestimonialCard
+              quote="Exceptional craftsmanship and strategic thinking. Every detail was considered, resulting in a brand identity that has become our most valuable business asset."
+              author="Aline Santos"
+              company="Lunar Studios"
+              delay={0.4}
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-white">
