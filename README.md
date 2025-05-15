@@ -5,27 +5,30 @@ A responsive and animated portfolio website that showcases professional work thr
 This project implements a modern web application architecture with server-side rendering capabilities and a component-based structure. It features a responsive design system with customizable themes, animated UI components using Framer Motion, and a comprehensive styling system powered by Tailwind CSS with custom configuration.
 
 ## Repository Structure
-```
+
+```bash
 .
-├── src/                          # Source code directory
-│   ├── app/                      # Next.js app directory (routing and layouts)
-│   │   ├── api/                  # API routes for backend functionality
-│   │   ├── globals.css          # Global styles and theme variables
-│   │   ├── layout.tsx           # Root layout component
-│   │   └── page.tsx             # Main page component
-│   ├── components/              # Reusable React components
-│   │   ├── ui/                  # Base UI components (buttons, inputs, etc.)
-│   │   └── [component].tsx      # Feature-specific components
-│   └── lib/                     # Utility functions and shared code
-├── public/                      # Static assets directory
-├── components.json              # UI components configuration
-├── next.config.ts              # Next.js configuration
-├── tailwind.config.ts          # Tailwind CSS configuration
-└── tsconfig.json               # TypeScript configuration
+├── src/                          
+│   ├── app/                      
+│   │   ├── api/                 
+│   │   ├── globals.css          
+│   │   ├── layout.tsx           
+│   │   └── page.tsx             
+│   ├── components/              
+│   │   ├── ui/                  
+│   │   └── [component].tsx      
+│   └── lib/                     
+├── public/                      
+├── components.json              
+├── next.config.ts              
+├── tailwind.config.ts          
+└── tsconfig.json               
 ```
 
 ## Usage Instructions
+
 ### Prerequisites
+
 - Node.js 16.x or later
 - npm or yarn package manager
 - Basic knowledge of React, TypeScript, and Tailwind CSS
@@ -49,14 +52,17 @@ yarn dev
 ```
 
 ### Quick Start
+
 1. Configure your environment:
+
 ```bash
 # Create a .env.local file
 cp .env.example .env.local
 ```
 
-2. Update content:
+1. Update content:
 Edit `src/app/page.tsx` to modify the main content sections:
+
 ```typescript
 // Example: Modifying the hero section
 <section className="relative h-screen">
@@ -65,8 +71,9 @@ Edit `src/app/page.tsx` to modify the main content sections:
 </section>
 ```
 
-3. Customize theme:
+1. Customize theme:
 Edit `src/app/globals.css` to modify theme variables:
+
 ```css
 :root {
   --primary: your-color;
@@ -77,6 +84,7 @@ Edit `src/app/globals.css` to modify theme variables:
 ### More Detailed Examples
 
 1. Adding a new portfolio item:
+
 ```typescript
 <PortfolioItem
   title="Project Name"
@@ -86,7 +94,8 @@ Edit `src/app/globals.css` to modify theme variables:
 />
 ```
 
-2. Creating a new service card:
+1. Creating a new service card:
+
 ```typescript
 <ServiceCard
   title="Service Name"
@@ -99,22 +108,29 @@ Edit `src/app/globals.css` to modify theme variables:
 ### Troubleshooting
 
 1. Build Errors
+
 - Issue: TypeScript compilation errors
+
   ```bash
   # Check TypeScript configuration
   npx tsc --noEmit
   ```
+
 - Solution: Ensure all required types are properly imported and defined
 
-2. Styling Issues
+1. Styling Issues
+
 - Issue: Tailwind classes not applying
+
   ```bash
   # Rebuild Tailwind CSS
   npm run build:css
   ```
+
 - Solution: Check Tailwind configuration and class names
 
 ## Data Flow
+
 The application follows a component-based architecture with data flowing from parent to child components through props.
 
 ```ascii
@@ -124,6 +140,7 @@ The application follows a component-based architecture with data flowing from pa
 ```
 
 Component Interactions:
+
 - Page components manage the overall layout and section organization
 - Section components handle specific content areas and animations
 - UI components provide reusable interface elements
