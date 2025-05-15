@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Link href="/" className="font-serif text-2xl text-[#333333] font-light">
-              AYLA
+              Nick
             </Link>
             <p className="font-sans text-[#555555] mt-4 max-w-md">
               A creative studio specializing in branding, web design, and digital experiences that connect with your
@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#e5e5e5] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="font-sans text-sm text-[#555555]">© {new Date().getFullYear()} AYLA. All rights reserved.</p>
+          <p className="font-sans text-sm text-[#555555]">© {new Date().getFullYear()} Nick. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="font-sans text-sm text-[#555555] hover:text-[#333333] transition-colors">
               Privacy Policy

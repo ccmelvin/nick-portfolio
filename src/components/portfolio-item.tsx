@@ -25,13 +25,15 @@ export default function PortfolioItem({ title, category, imageSrc, delay }: Port
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Image
-        src={imageSrc || "/placeholder.svg"}
-        alt={title}
-        width={800}
-        height={600}
-        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-      />
+      <div className="h-[400px] overflow-hidden">
+        <Image
+          src={imageSrc || "/placeholder.svg"}
+          alt={title}
+          width={800}
+          height={400}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      </div>
 
       <motion.div
         className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"

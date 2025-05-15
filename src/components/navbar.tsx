@@ -44,7 +44,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/" className="font-serif text-2xl text-[#333333] font-light">
-            AYLA
+            Nick
           </Link>
 
           <div className="hidden md:flex space-x-8">
@@ -52,7 +52,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-sans text-sm text-[#333333] hover:text-[#888888] transition-colors"
+                className="font-sans text-[18px] text-[#312e2e] hover:text-[#888888] transition-colors"
               >
                 {link.label}
               </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
           >
             <div className="container mx-auto px-4 py-6 flex justify-between items-center">
               <Link href="/" className="font-serif text-2xl text-[#333333] font-light">
-                AYLA
+                Nick
               </Link>
               <button className="text-[#333333]" onClick={() => setIsMobileMenuOpen(false)}>
                 <X size={24} />
