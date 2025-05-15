@@ -2,6 +2,8 @@
 
 A responsive and animated portfolio website that showcases professional work through an elegant, user-friendly interface. Built with Next.js 13+, TypeScript, and Tailwind CSS, featuring smooth animations and dark mode support.
 
+![Portfolio Demo](/public/portfolio-demo.gif)
+
 This project implements a modern web application architecture with server-side rendering capabilities and a component-based structure. It features a responsive design system with customizable themes, animated UI components using Framer Motion, and a comprehensive styling system powered by Tailwind CSS with custom configuration.
 
 ## Repository Structure
