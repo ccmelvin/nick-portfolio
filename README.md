@@ -1,4 +1,4 @@
-# Modern Portfolio Website with Next.js, TypeScript, and Tailwind CSS
+# Interactive Design Portfolio with Next.js, TypeScript, and Tailwind CSS
 
 A responsive and animated portfolio website that showcases professional work through an elegant, user-friendly interface. Built with Next.js 13+, TypeScript, and Tailwind CSS, featuring smooth animations and dark mode support.
 
