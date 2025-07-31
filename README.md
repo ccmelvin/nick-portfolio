@@ -1,6 +1,25 @@
-# Interactive Design Portfolio with Next.js, TypeScript, and Tailwind CSS
+# Interactive Design Portfolio
 
-A responsive and animated portfolio website that showcases professional work through an elegant, user-friendly interface. Built with Next.js 13+, TypeScript, and Tailwind CSS, featuring smooth animations and dark mode support.
+## About
+
+A modern, responsive portfolio website showcasing professional design work through an elegant and interactive interface. This project demonstrates advanced web development techniques using cutting-edge technologies to create a seamless user experience.
+
+### Key Features
+- 🎨 **Responsive Design** - Optimized for all devices and screen sizes
+- ⚡ **Performance Optimized** - Built with Next.js 13+ for lightning-fast loading
+- 🌙 **Dark Mode Support** - Toggle between light and dark themes
+- 🎭 **Smooth Animations** - Powered by Framer Motion for engaging interactions
+- 📱 **Mobile-First** - Designed with mobile users in mind
+- ♿ **Accessible** - Following WCAG guidelines for inclusive design
+- 🔧 **TypeScript** - Type-safe development for better code quality
+
+### Tech Stack
+- **Framework**: Next.js 15.3.2
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4.0
+- **Animations**: Framer Motion
+- **UI Components**: Radix UI
+- **Icons**: Lucide React
 
 ![Portfolio Demo](/public/portfolio-demo.gif)
 

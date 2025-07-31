@@ -2,6 +2,14 @@
   "name": "nick-portfolio",
   "version": "0.1.0",
   "private": true,
+  "description": "Interactive design portfolio built with Next.js, TypeScript, and Tailwind CSS featuring responsive design and smooth animations",
+  "keywords": ["portfolio", "nextjs", "typescript", "tailwindcss", "framer-motion", "responsive-design", "dark-mode", "web-development", "ui-ux", "design-portfolio"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccmelvin/nick-portfolio.git"
+  },
+  "homepage": "https://github.com/ccmelvin/nick-portfolio",
+  "author": "Nick Portfolio",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
